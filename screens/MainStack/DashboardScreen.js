@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, Text } from "react-native";
+import WeatherToday from "../../components/WeatherToday";
 
 // temp variables for storing city and country desired for weather forecast
 const city = "Singapore";
@@ -13,7 +14,9 @@ export default class DashboardScreen extends Component {
   render() {
     return (
       <View>
-        <Text>Dashboard</Text>
+        <View style={{ marginTop: 15 }}>
+          <WeatherToday />
+        </View>
       </View>
     );
   }
