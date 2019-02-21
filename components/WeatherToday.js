@@ -6,7 +6,9 @@ const WeatherToday = props => {
   return (
     <View style={styles.container}>
       <Text style={styles.datetime}>Wed, 11 Jan 2017 01:00 PM SGT</Text>
-      <Text style={styles.temperature}>82</Text>
+      <View style={{ marginTop: 5 }}>
+        <Text style={styles.temperature}>82</Text>
+      </View>
       <Text style={styles.weather}>ThunderStorm</Text>
     </View>
   );
