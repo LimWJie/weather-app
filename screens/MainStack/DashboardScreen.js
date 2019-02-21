@@ -15,7 +15,11 @@ export default class DashboardScreen extends Component {
     return (
       <View>
         <View style={{ marginTop: 15 }}>
-          <WeatherToday />
+          <WeatherToday
+            datetime={1550739600}
+            temperature={82}
+            weather={"Thunderstorm"}
+          />
         </View>
       </View>
     );
