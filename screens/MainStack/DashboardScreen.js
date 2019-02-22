@@ -8,39 +8,6 @@ import { get_weather_forecasts } from "../../apis";
 const city = "Singapore";
 const country = "Singapore";
 
-const FORECASTS_DUMMY = [
-  {
-    datetime: 1550815200,
-    tempLow: 29.99,
-    tempHigh: 32.13,
-    weather: "Clouds"
-  },
-  {
-    datetime: 1550815200,
-    tempLow: 29.99,
-    tempHigh: 32.13,
-    weather: "Clouds"
-  },
-  {
-    datetime: 1550815200,
-    tempLow: 29.99,
-    tempHigh: 32.13,
-    weather: "Clouds"
-  },
-  {
-    datetime: 1550815200,
-    tempLow: 29.99,
-    tempHigh: 32.13,
-    weather: "Clouds"
-  },
-  {
-    datetime: 1550815200,
-    tempLow: 29.99,
-    tempHigh: 32.13,
-    weather: "Clouds"
-  }
-];
-
 export default class DashboardScreen extends Component {
   static navigationOptions = {
     title: `${city}, ${country}`
@@ -49,21 +16,24 @@ export default class DashboardScreen extends Component {
   state = { forecasts: [] };
 
   componentDidMount() {
-    get_weather_forecasts(city, country)
-      .then(res => res.json())
-      .then(forecasts => this.setState({ forecasts }));
+    get_weather_forecasts(city, country).then(forecasts => {
+      this.setState({ forecasts });
+    });
   }
 
   render() {
+    const { forecasts } = this.state;
     return (
       <View style={{ marginTop: 15, flex: 1 }}>
-        <WeatherToday
-          datetime={1550739600}
-          temperature={82}
-          weather={"Thunderstorm"}
-        />
+        {forecasts.length > 0 && (
+          <WeatherToday
+            datetime={forecasts[0].datetime}
+            temperature={forecasts[0].temperature}
+            weather={forecasts[0].weather}
+          />
+        )}
         <View style={{ marginTop: 30, flex: 1 }}>
-          <WeatherList forecasts={FORECASTS_DUMMY} />
+          <WeatherList forecasts={forecasts} />
         </View>
       </View>
     );
