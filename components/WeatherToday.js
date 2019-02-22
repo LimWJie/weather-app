@@ -8,7 +8,7 @@ const WeatherToday = props => {
     <View style={styles.container}>
       <Text style={styles.datetime}>{formatDate(props.datetime)}</Text>
       <View style={{ marginTop: 5 }}>
-        <Text style={styles.temperature}>{props.temperature}</Text>
+        <Text style={styles.temperature}>{props.temperature.toFixed(0)}</Text>
       </View>
       <Text style={styles.weather}>{props.weather}</Text>
     </View>

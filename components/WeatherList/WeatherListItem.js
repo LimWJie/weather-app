@@ -10,7 +10,7 @@ const WeatherListItem = props => {
       <View>
         <Text style={styles.datetime}>{formatDate(props.datetime)}</Text>
         <Text style={styles.temperatureRange}>
-          {props.tempLow} - {props.tempHigh}
+          {props.tempLow.toFixed(0)} - {props.tempHigh.toFixed(0)}
         </Text>
         <Text style={styles.weather}>{props.weather}</Text>
       </View>
