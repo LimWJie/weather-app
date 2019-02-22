@@ -6,6 +6,39 @@ import WeatherList from "../../components/WeatherList";
 const city = "Singapore";
 const country = "Singapore";
 
+const FORECASTS_DUMMY = [
+  {
+    datetime: 1550815200,
+    tempLow: 29.99,
+    tempHigh: 32.13,
+    weather: "Clouds"
+  },
+  {
+    datetime: 1550815200,
+    tempLow: 29.99,
+    tempHigh: 32.13,
+    weather: "Clouds"
+  },
+  {
+    datetime: 1550815200,
+    tempLow: 29.99,
+    tempHigh: 32.13,
+    weather: "Clouds"
+  },
+  {
+    datetime: 1550815200,
+    tempLow: 29.99,
+    tempHigh: 32.13,
+    weather: "Clouds"
+  },
+  {
+    datetime: 1550815200,
+    tempLow: 29.99,
+    tempHigh: 32.13,
+    weather: "Clouds"
+  }
+];
+
 export default class DashboardScreen extends Component {
   static navigationOptions = {
     title: `${city}, ${country}`
@@ -21,7 +54,7 @@ export default class DashboardScreen extends Component {
             weather={"Thunderstorm"}
           />
           <View style={{ marginTop: 30 }}>
-            <WeatherList />
+            <WeatherList forecasts={FORECASTS_DUMMY} />
           </View>
         </View>
       </View>

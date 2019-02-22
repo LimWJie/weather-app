@@ -2,14 +2,19 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import PropTypes from "prop-types";
+import moment from "moment";
 
 const WeatherListItem = props => {
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.datetime}>11 Jan 2017, Wed</Text>
-        <Text style={styles.temperatureRange}>79 - 84</Text>
-        <Text style={styles.weather}>Thunderstorm</Text>
+        <Text style={styles.datetime}>
+          {moment(props.datetime).format("ddd, D MMM YYYY hh:mm A")}
+        </Text>
+        <Text style={styles.temperatureRange}>
+          {props.tempLow} - {props.tempHigh}
+        </Text>
+        <Text style={styles.weather}>{props.weather}</Text>
       </View>
       <MaterialIcons
         name="chevron-right"
@@ -44,6 +49,11 @@ const styles = StyleSheet.create({
   }
 });
 
-WeatherListItem.propTypes = {};
+WeatherListItem.propTypes = {
+  datetime: PropTypes.number,
+  tempLow: PropTypes.number,
+  tempHigh: PropTypes.number,
+  weather: PropTypes.string
+};
 
 export default WeatherListItem;
