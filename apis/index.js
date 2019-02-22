@@ -1,5 +1,4 @@
-const API_KEY = "d3df96e2cafdafa89228156bd238cc58";
-const UNIT = "metric";
+import config from "../config/env.json";
 
 /**
  * Restructure data returned by openweathermap 5 day/3 hour forecast API
@@ -25,9 +24,10 @@ const selectWeatherForecasts = data => {
  * @param {String} city
  * @param {String} country
  */
-export const get_weather_forecasts = (city, country) => {
+export const get_weather_forecasts = () => {
+  const { city, country, unit, apiKey } = config;
   return fetch(
-    `http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&units=${UNIT}&APPID=${API_KEY}`
+    `http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&units=${unit}&APPID=${apiKey}`
   )
     .then(res => res.json())
     .then(data => selectWeatherForecasts(data));

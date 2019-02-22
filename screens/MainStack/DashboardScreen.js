@@ -3,20 +3,17 @@ import { View } from "react-native";
 import WeatherNow from "../../components/WeatherNow";
 import WeatherList from "../../components/WeatherList";
 import { get_weather_forecasts } from "../../apis";
-
-// temp variables for storing city and country desired for weather forecast
-const city = "Singapore";
-const country = "Singapore";
+import config from "../../config/env.json";
 
 export default class DashboardScreen extends Component {
   static navigationOptions = {
-    title: `${city}, ${country}`
+    title: `${config.city}, ${config.country}`
   };
 
   state = { forecasts: [] };
 
   componentDidMount() {
-    get_weather_forecasts(city, country).then(forecasts => {
+    get_weather_forecasts().then(forecasts => {
       this.setState({ forecasts });
     });
   }
