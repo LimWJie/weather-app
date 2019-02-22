@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 import PropTypes from "prop-types";
 import { formatDate } from "../utils/helpers";
 
-const WeatherToday = props => {
+const WeatherNow = props => {
   return (
     <View style={styles.container}>
       <Text style={styles.datetime}>{formatDate(props.datetime)}</Text>
@@ -32,10 +32,10 @@ const styles = StyleSheet.create({
   }
 });
 
-WeatherToday.propTypes = {
+WeatherNow.propTypes = {
   datetime: PropTypes.number,
   temperature: PropTypes.number,
   weather: PropTypes.string
 };
 
-export default WeatherToday;
+export default WeatherNow;

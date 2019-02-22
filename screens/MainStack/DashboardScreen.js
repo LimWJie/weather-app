@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View } from "react-native";
-import WeatherToday from "../../components/WeatherToday";
+import WeatherNow from "../../components/WeatherNow";
 import WeatherList from "../../components/WeatherList";
 import { get_weather_forecasts } from "../../apis";
 
@@ -26,7 +26,7 @@ export default class DashboardScreen extends Component {
     return (
       <View style={{ marginTop: 15, flex: 1 }}>
         {forecasts.length > 0 && (
-          <WeatherToday
+          <WeatherNow
             datetime={forecasts[0].datetime}
             temperature={forecasts[0].temperature}
             weather={forecasts[0].weather}
