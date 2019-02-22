@@ -46,16 +46,14 @@ export default class DashboardScreen extends Component {
 
   render() {
     return (
-      <View>
-        <View style={{ marginTop: 15 }}>
-          <WeatherToday
-            datetime={1550739600}
-            temperature={82}
-            weather={"Thunderstorm"}
-          />
-          <View style={{ marginTop: 30 }}>
-            <WeatherList forecasts={FORECASTS_DUMMY} />
-          </View>
+      <View style={{ marginTop: 15, flex: 1 }}>
+        <WeatherToday
+          datetime={1550739600}
+          temperature={82}
+          weather={"Thunderstorm"}
+        />
+        <View style={{ marginTop: 30, flex: 1 }}>
+          <WeatherList forecasts={FORECASTS_DUMMY} />
         </View>
       </View>
     );
