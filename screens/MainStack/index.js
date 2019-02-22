@@ -1,5 +1,6 @@
 import { createStackNavigator } from "react-navigation";
 import DashboardScreen from "./DashboardScreen";
+import theme from "../../style/theme.style";
 
 export default createStackNavigator(
   {
@@ -8,9 +9,9 @@ export default createStackNavigator(
   {
     defaultNavigationOptions: {
       headerStyle: {
-        backgroundColor: "#EE4D3B"
+        backgroundColor: theme.PRIMARY_COLOR
       },
-      headerTintColor: "#FFFFFF"
+      headerTintColor: theme.HEADER_TINT_COLOR
     }
   }
 );

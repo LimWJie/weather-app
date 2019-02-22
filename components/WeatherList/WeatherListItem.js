@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import PropTypes from "prop-types";
 import { formatDate } from "../../utils/helpers";
+import theme from "../../style/theme.style";
 
 const WeatherListItem = props => {
   return (
@@ -17,7 +18,7 @@ const WeatherListItem = props => {
       <MaterialIcons
         name="chevron-right"
         size={24}
-        color="#EE4D3B"
+        color={theme.PRIMARY_COLOR}
         style={{ alignSelf: "center", padding: 10 }}
       />
     </View>
