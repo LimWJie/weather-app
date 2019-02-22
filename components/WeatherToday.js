@@ -1,14 +1,12 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import PropTypes from "prop-types";
-import moment from "moment";
+import { formatDate } from "../utils/helpers";
 
 const WeatherToday = props => {
   return (
     <View style={styles.container}>
-      <Text style={styles.datetime}>
-        {moment(props.datetime).format("ddd, D MMM YYYY hh:mm A")}
-      </Text>
+      <Text style={styles.datetime}>{formatDate(props.datetime)}</Text>
       <View style={{ marginTop: 5 }}>
         <Text style={styles.temperature}>{props.temperature}</Text>
       </View>

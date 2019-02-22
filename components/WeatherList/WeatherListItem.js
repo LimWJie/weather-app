@@ -2,15 +2,13 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import PropTypes from "prop-types";
-import moment from "moment";
+import { formatDate } from "../../utils/helpers";
 
 const WeatherListItem = props => {
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.datetime}>
-          {moment(props.datetime).format("ddd, D MMM YYYY hh:mm A")}
-        </Text>
+        <Text style={styles.datetime}>{formatDate(props.datetime)}</Text>
         <Text style={styles.temperatureRange}>
           {props.tempLow} - {props.tempHigh}
         </Text>
